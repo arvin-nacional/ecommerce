@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin "@tailwindcss/container-queries";
 @plugin "@tailwindcss/typography";
@@ -20,8 +20,30 @@
 }
 
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-  img[loading='lazy'] {
+  img[loading="lazy"] {
     clip-path: inset(0.6px);
+  }
+}
+
+@layer utilities {
+  @keyframes carousel-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-carousel {
+    display: flex;
+    white-space: nowrap;
+    animation: carousel-scroll 60s linear infinite;
+    width: max-content; /* Prevents shrinking */
+  }
+  /* Pause animation on hover */
+  .animate-carousel:hover {
+    animation-play-state: paused;
   }
 }
 
