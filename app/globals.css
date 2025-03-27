@@ -31,14 +31,14 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
   }
 
   .animate-carousel {
     display: flex;
     white-space: nowrap;
-    animation: carousel-scroll 80s linear infinite;
+    animation: carousel-scroll 30s linear infinite;
     width: max-content; /* Prevents shrinking */
   }
   /* Pause animation on hover */
